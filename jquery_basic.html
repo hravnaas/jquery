@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>My Basic JQuery Assigment</title>
+	<style type="text/css">
+		.yellow{
+			background-color: yellow;
+		}
+		.red{
+			background-color: red;
+		}
+		.hideImage{
+			visibility: hidden;
+		}
+	</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		// x .click
+		// x .focus
+		// x .addClass
+		// x .val
+		// x .text
+		// x .attr
+		// x .html
+		// x .data
+		// x .before
+		// x .after
+		// x .append
+		// x .show
+		// x .hide
+		// x.toggle
+		// x .fadeIn
+		// x .fadeOut
+		// x .slideDown
+		// x .slideUp
+		// x .slideToggle
+
+			/$('#h1_1').hide();
+
+			$('#btn1').click(function(){
+				$('#redp').addClass('red');
+			})
+
+			$('#btn2').click(function(){
+				// $('#img1').addClass("hideImage")
+				$('#img1').slideToggle();
+			})
+
+			$("#btn3").click(function(){
+				$('#p3').before("<p>new paragraph before</p>");
+				$('#p3').after("<p>new paragraph after</p>");
+				$('#p3').text("Click the button to append a new paragraph.")
+				$('#p3').append("appended text");
+				$('#h1_1').show();
+			})
+
+			$('#img1').hover(function(){
+				$('input').val("Tuesday");
+			})
+			
+			$('input').focus(function(){
+				$('input').val("Type something");
+			})
+
+			var inputType = $('input').attr("type");
+			// alert(inputType)
+
+			var divcHtml = $('#divC').html();
+			$('#divD').html(divcHtml);
+			var divdHtml = $('#divD').html();
+			
+			$('div.container').data("result", 90);
+			console.log($('div.container').data());
+
+			$('#img5').click(function(){
+				$(this).slideUp();
+			});
+
+			$('h5').click(function(){
+				//$('h5').slideDown();
+				$( "#book" ).slideDown( "slow", function() {
+ 			   		alert("done");
+ 			 });
+			});
+
+
+			$('h6').click(function(){
+				$(this).toggle();
+			});
+
+			$('#div9').click(function(){
+				$(this).fadeOut();
+			})
+
+			$('#div10').click(function(){
+				$('#div9').fadeIn();
+			})
+		})
+	</script>
+</head>
+</body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-primary">AddClass
+				<button class="btn-primary btn-lg" id="btn1">AddClass</button>
+				<p id="redp">Click the button to add class 'red' to ths paragraph</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12 text-primary">SlideToggle
+				<button class="btn-warning btn-lg" id="btn2">SlideToggle</button>
+				<p>Click to button to SlideToggle a hidden image</p>
+				<div id="div_img">
+					<img id="img1" src="logo.png" alt="cantfindimage">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12 text-primary">Append
+				<button class="btn-error btn-lg" id="btn3">Append</button>
+				<p id="p3">Click the button to append a new paragraph</p>
+			</div>
+		</div>
+		<input type="text" name="Input1" value="Monday">
+	</div>
+	<div id="divC"><h1 id="h1_1">Hello Coding</h1></div>
+	<div id="divD"><h2 id="h2_1">Hello Dojo</h2></div>
+	<img src="content_ad.png" alt="none" id="img6">
+	<img src="main_pic.png" alt="none" id="img5">
+	<h5 id="book">Hi there tester</h5>
+	<h6>This is h6</h6>
+	<div id="div9"><h1>It is Tuesday</div>
+	<div id="div10"><h1>It is Wednesday</div>
+</body>
+</html>

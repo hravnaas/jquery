@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>HoverInOut Assignment</title>
+    <style type="text/css">
+      .img{
+        display: inline-block;
+        vertical-align: top;
+        width: 200px;
+        height: 100px;
+        padding: 5px;
+      }
+      .mainblock{
+        margin: 30px;
+      }
+      img{
+        width: 190px;
+        height: 100px;
+      }
+    </style>
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+    <script type="text/javascript">
+
+        function SetImgWidth(object, width, height)
+        {
+          $(object).css("width", width);
+          $(object).css("height", height);
+        }
+
+        function SwitchImages(object)
+        {
+          // Get the currently used image
+          var currentImage = $(object).attr("src");
+
+
+  				// Set alt-src as current image
+  				$(object).attr("src", $(object).attr("alt-src"));
+
+  				// Save previously used image as alt-src
+  				$(object).attr("alt-src", currentImage);
+        }
+
+        $(document).ready(function(){
+          $('img').hover(function()
+          {
+            //SetImgWidth(this, 200, 110);
+            SwitchImages(this);
+          },
+          function()
+          {
+            //SetImgWidth(this, 190, 100);
+            SwitchImages(this);
+          })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="mainblock">
+        <div class="img">
+            <img src="industrial.png" alt="logo" alt-src="left_content_ad.png" />
+        </div>
+        <div class="img">
+            <img src="industrial.png" alt="logo" alt-src="left_content_ad.png"/>
+        </div>
+        <div class="img">
+            <img src="industrial.png" alt="logo" alt-src="left_content_ad.png"/>
+        </div>
+        <div class="img">
+            <img src="industrial.png" alt="logo" alt-src="left_content_ad.png"/>
+        </div>
+    </div>
+    <div class="mainblock">
+        <div class="img">
+            <img src="industrial.png" alt="logo" alt-src="left_content_ad.png"/>
+        </div>
+        <div class="img">
+            <img src="industrial.png" alt="logo" alt-src="left_content_ad.png"/>
+        </div>
+        <div class="img">
+            <img src="industrial.png" alt="logo" alt-src="left_content_ad.png"/>
+        </div>
+        <div class="img">
+            <img src="industrial.png" alt="logo" alt-src="left_content_ad.png"/>
+        </div>
+    </div>
+</body>
+
+</html>

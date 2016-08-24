@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Disappearing Ninja</title>
+	<style type="text/css">
+		div div{
+			display: inline-block;
+			vertical-align: top;
+			width: 150px;
+			height: 150px;
+			margin:15px;
+		}
+		#maindiv{
+			width: 700px;
+			height: 500px;
+		}
+		button{
+			display: block;
+			margin:15px;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			// Hide an image when clicked.
+			$('img').click(function(){
+				$(this).hide();
+			})
+
+			// Restore all images
+			$('button').click(function(){
+				$('img').show();
+			})
+		})
+	</script>
+</head>
+<body>
+<div id="maindiv">
+	<div>
+		<img src="logo.png" alt="nologo" width="140" height="140">
+	</div>
+	<div>
+		<img src="logo.png" alt="nologo" width="140" height="140">
+	</div>
+	<div>
+		<img src="logo.png" alt="nologo" width="140" height="140">
+	</div>
+	<div>
+		<img src="logo.png" alt="nologo" width="140" height="140">
+	</div>
+	<div>
+		<img src="logo.png" alt="nologo" width="140" height="140">
+	</div>
+	<div>
+		<img src="logo.png" alt="nologo" width="140" height="140">
+	</div>
+	<div>
+		<img src="logo.png" alt="nologo" width="140" height="140">
+	</div>
+	<div>
+		<img src="logo.png" alt="nologo" width="140" height="140">
+	</div>
+	<button>Restore</button>
+</div>
+</body>
+</html>

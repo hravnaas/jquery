@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Ninja To Cat</title>
+	<style type="text/css">
+		div{
+			margin: 3px;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('img').click(function(){
+
+				// Keep track of the current image
+				var currentImage = $(this).attr("src");
+
+				// Set alt-src as current image
+				$(this).attr("src", $(this).attr("alt-src"));
+
+				// Save previously used image as alt-src
+				$(this).attr("alt-src", currentImage);
+			})
+		})
+	</script>
+</head>
+<body>
+<div>
+	<img src="ninja0.png" alt="img" alt-src="cat0.png">
+</div>
+<div>
+	<img src="ninja1.png" alt="img" alt-src="cat1.png">
+</div>
+<div>
+	<img src="ninja2.png" alt="img" alt-src="cat2.png">
+</div>
+<div>
+	<img src="ninja3.png" alt="img" alt-src="cat3.png">
+</div>
+<div>
+	<img src="ninja4.png" alt="img" alt-src="cat4.png">
+</div>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>JQuery Assignment</title>
+	<style type="text/css">
+		*{
+			/*outline: 1px dotted black;*/
+		}
+		.red{
+			color: red;
+		}
+		h1, .functionText{
+			display: inline-block;
+			vertical-align: top;
+			text-align: center;
+		}
+		.btn-primary{
+			width: 130px;
+			height: 50px;
+		}
+		.buttondiv{
+			width: 200px;
+			height: 100px;
+			display: inline-block;
+			vertical-align: top;
+			text-align: left;
+			margin-top: 50px;
+		}
+		.jqfunction{
+			width: 700px;
+			height: 200px;
+			margin: 30px;
+		}
+	</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// Hide a few classes on load.
+			$('p.notthere, div.fadein div.functionText img').hide();
+
+			// addClass, click
+			$('div.addclass div button').click(function(){
+				$('div.addclass div.functionText p').addClass('red');
+			})
+
+			// focus
+			$('div.focus div button').click(function(){
+				$('div.focus div.functionText input').focus();
+			})
+
+			// val
+			$('div.val div button').click(function(){
+				$('div.val div.functionText input').val("New value")
+			})
+
+			// text
+			$('div.text div button').click(function(){
+				$('div.text div.functionText p').text("Updated paragraph text.")
+			})
+
+			// attr
+			$('div.attr div button').click(function(){
+				var currentClasses = $(this).attr("class");
+				alert("Clicked button has these classes: " + currentClasses);
+			})
+			
+			// html
+			$('div.html div button').click(function(){
+				$('div.html div.functionText p').html("Updated <b>paragraph</b> text.")
+			})
+
+			// data
+			$('div.data div button').click(function(){
+				$('div.data div.functionText p').data("myValue", 90);
+				console.log($('div.data div.functionText p').data());
+			})
+
+			// before
+			$('div.before div button').click(function(){
+				$('div.before div.functionText p').before("<p>New paragraph before</p>");
+			})
+
+			// after
+			$('div.after div button').click(function(){
+				$('div.after div.functionText p').after("<p>New paragraph after</p>");
+			})
+
+			// append
+			$('div.append div button').click(function(){
+				$('div.append div.functionText p').append(" Text append.");
+			})
+
+			// show
+			$('div.show div button').click(function(){
+				$('p.notthere').show();
+			})
+
+			// hide
+			$('div.hideme div button').click(function(){
+				$('p.extra').hide();
+			})
+
+			// toggle
+			$('div.toggle div button').click(function(){
+				$('p.toggleme').toggle();
+			})
+
+			// toggle
+			$('div.toggle div button').click(function(){
+				$('p.toggleme').toggle();
+			})
+
+			// fadeIn
+			$('div.fadein div button').click(function(){
+				$('div.fadein div.functionText img').fadeIn();
+			})
+
+			// fadeOut
+			$('div.fadeout div button').click(function(){
+				$('div.fadeout div.functionText img').fadeOut();
+			})
+
+			// slideDown
+			$('div.slidedown div button').click(function(){
+				$('div.slidedown div.functionText img').hide();
+				$('div.slidedown div.functionText img').slideDown();
+			})
+
+			// slideUp
+			$('div.slideup div button').click(function(){
+				$('div.slideup div.functionText img').slideUp();
+			})
+
+			// slideToggle
+			$('div.slidetoggle div button').click(function(){
+				$('div.slidetoggle div.functionText img').slideToggle();
+			})
+		})
+	</script>
+</head>
+<body>
+<div class="jqfunction addclass">
+	<div class="buttondiv">
+		<button class="btn-primary btn-lg">AddClass</button>
+	</div>
+	<div class="functionText">
+		<h1>AddClass</h1>
+		<p>Click the button to add class 'red' to this paragraph</p>
+	</div>
+	<hr>
+</div>
+<div class="jqfunction focus">
+	<div class="buttondiv">
+		<button class="btn-primary btn-lg">Focus</button>
+	</div>
+	<div class="functionText">
+		<h1>Focus</h1>
+		<p>Click the button to set focus to the input field.</p>
+		<input type="text" name="Input1" value="">
+	</div>
+	<hr>
+</div>
+<div class="jqfunction val">
+	<div class="buttondiv">
+		<button class="btn-primary btn-lg">Val</button>
+	</div>
+	<div class="functionText">
+		<h1>Val</h1>
+		<p>Click the button to change the value in the input field.</p>
+		<input type="text" name="Input2" value="Original value">
+	</div>
+	<hr>
+</div>
+<div class="jqfunction text">
+	<div class="buttondiv">
+		<button class="btn-primary btn-lg">Text</button>
+	</div>
+	<div class="functionText">
+		<h1>Text</h1>
+		<p>Click the button to change the text in this paragraph.</p>
+	</div>
+	<hr>
+</div>
+<div class="jqfunction attr">
+	<div class="buttondiv">
+		<button class="btn-primary btn-lg">Attr</button>
+	</div>
+	<div class="functionText">
+		<h1>Attr</h1>
+		<p>Click the button to show the button's CSS classes.</p>
+	</div>
+	<hr>
+</div>
+<div class="jqfunction html">
+	<div class="buttondiv">
+		<button class="btn-primary btn-lg">Html</button>
+	</div>
+	<div class="functionText">
+		<h1>Html</h1>
+		<p>Click the button to change the html of this paragraph</p>
+	</div>
+	<hr>
+</div>
+<div class="jqfunction data">
+	<div class="buttondiv">
+		<button class="btn-primary btn-lg">Data</button>
+	</div>
+	<div class="functionText">
+		<h1>Data</h1>
+		<p>Click the button to add and display data for this paragraph.</p>
+	</div>
+	<hr>
+</div>
+<div class="jqfunction before">
+	<div class="buttondiv">
+		<button class="btn-primary btn-lg">Before</button>
+	</div>
+	<div class="functionText">
+		<h1>Before</h1>
+		<p>Click the button to add a paragraph before this paragraph.</p>
+	</div>
+	<hr>
+</div>
+<div class="jqfunction after">
+	<div class="buttondiv">
+		<button class="btn-primary btn-lg">After</button>
+	</div>
+	<div class="functionText">
+		<h1>After</h1>
+		<p>Click the button to add a paragraph after this paragraph.</p>
+	</div>
+	<hr>
+</div>
+<div class="jqfunction append">
+	<div class="buttondiv">
+		<button class="btn-primary btn-lg">Append</button>
+	</div>
+	<div class="functionText">
+		<h1>Append</h1>
+		<p>Click the button to append text to this paragraph.</p>
+	</div>
+	<hr>
+</div>
+<div class="jqfunction show">
+	<div class="buttondiv">
+		<button class="btn-primary btn-lg">Show</button>
+	</div>
+	<div class="functionText">
+		<h1>Show</h1>
+		<p>Click the button to show hidden paragraph.</p>
+		<p class="notthere">Hidden paragraph.</p>
+	</div>
+	<hr>
+</div>
+<div class="jqfunction hideme">
+	<div class="buttondiv">
+		<button class="btn-primary btn-lg">Hide Me</button>
+	</div>
+	<div class="functionText">
+		<h1>Hide Me</h1>
+		<p>Click the button to hide extra paragraph.</p>
+		<p class="extra">Extra paragraph.</p>
+	</div>
+	<hr>
+</div>
+<div class="jqfunction toggle">
+	<div class="buttondiv">
+		<button class="btn-primary btn-lg">Toggle</button>
+	</div>
+	<div class="functionText">
+		<h1>Toggle</h1>
+		<p>Click the button repeatedly to toggle extra paragraph.</p>
+		<p class="toggleme">Toggle paragraph.</p>
+	</div>
+	<hr>
+</div>
+<div class="jqfunction fadein">
+	<div class="buttondiv">
+		<button class="btn-primary btn-lg">FadeIn</button>
+	</div>
+	<div class="functionText">
+		<h1>FadeIn</h1>
+		<p>Click the button to fade in image.</p>
+		<img src="main.png" alt="main image" width="130" height="100">
+	</div>
+	<hr>
+</div>
+<div class="jqfunction fadeout">
+	<div class="buttondiv">
+		<button class="btn-primary btn-lg">FadeOut</button>
+	</div>
+	<div class="functionText">
+		<h1>FadeOut</h1>
+		<p>Click the button to fade out image.</p>
+		<img src="main.png" alt="main image" width="130" height="100">
+	</div>
+	<hr>
+</div>
+<div class="jqfunction slidedown">
+	<div class="buttondiv">
+		<button class="btn-primary btn-lg">SlideDown</button>
+	</div>
+	<div class="functionText">
+		<h1>SlideDown</h1>
+		<p>Click the button to slide down image.</p>
+		<img src="main.png" alt="main image" width="130" height="100">
+	</div>
+	<hr>
+</div>
+<div class="jqfunction slideup">
+	<div class="buttondiv">
+		<button class="btn-primary btn-lg">SlideUp</button>
+	</div>
+	<div class="functionText">
+		<h1>SlideUp</h1>
+		<p>Click the button to slide up image.</p>
+		<img src="main.png" alt="main image" width="130" height="100">
+	</div>
+	<hr>
+</div>
+<div class="jqfunction slidetoggle">
+	<div class="buttondiv">
+		<button class="btn-primary btn-lg">SlideToggle</button>
+	</div>
+	<div class="functionText">
+		<h1>SlideToggle</h1>
+		<p>Click the button to slide toggle image.</p>
+		<img src="main.png" alt="main image" width="130" height="100">
+	</div>
+	<hr>
+</div>
+</body>
+</html>

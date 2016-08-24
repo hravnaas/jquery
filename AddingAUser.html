@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Add A User Assignment</title>
+	<style type="text/css">
+		input{
+			display: block;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('body input.sub').click(function(){
+
+				// Read values from user
+				var firstName = $('input.fname').val();
+				var lastName = $('input.lname').val();
+				var emailAddress = $('input.email').val();
+				var contactNo = $('input.contact').val();
+				
+				// Add new row with user values to table
+				$('table tr').last().after("<tr><td>" +  firstName + "</td><td>" +  lastName + "</td><td>" +  emailAddress + "</td><td>" +  contactNo + "</td></tr>");
+
+				// Clean up
+				$('input.fname').val("");
+				$('input.lname').val("");
+				$('input.email').val("");
+				$('input.contact').val("");
+			})
+		})
+	</script>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email Address</th>
+			<th>Contact #</th>
+		</tr>
+	</table>
+	<h1>Add User</h1>
+	<hr>
+	<form type="input">
+		First Name: <input class="fname" type="text" name="firstName" placeholder="First Name">
+		Last Name: <input class="lname" type="text" name="lastName" placeholder="Last Name">
+		Email Address: <input class="email" type="text" name="emailAddress" placeholder="Email Address">
+		Contact No.: <input class="contact" type="text" name="contactNo" placeholder="Phone #">
+	</form>
+	<input class="sub" type="submit" value="Add User">
+</body>
+</html>
